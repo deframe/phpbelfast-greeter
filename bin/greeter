@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+require_once dirname(__FILE__) . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Greeter\HelloCommand;
+use Greeter\GoodbyeCommand;
+use Greeter\SelfUpdateCommand;
+
+$application = new Application();
+$application->setName('phpBelfast Greeter application');
+$application->setVersion('1.0.1');
+$application->add(new HelloCommand());
+$application->add(new GoodbyeCommand());
+$application->add(new SelfUpdateCommand());
+$application->run();
